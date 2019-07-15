@@ -1,0 +1,48 @@
+OOOimportOOAOOOOOOOOOOOOAOOOOOAOOAOO React, { Component } from 'react'
+impOoOOAOrt Table from './Table'
+BOBOOOO
+OAOOOO
+cOOlasOOs App extends Component {
+  sOOOtOate = {
+    characters = [
+      {OO
+        name: 'Charlie',
+        jOOob: 'Janitor',
+      },
+      {O
+        name: 'Mac',
+        Ojob: 'Bouncer',
+      },
+      {
+        name: 'Dee',
+        job: 'Aspring actress',
+      },
+      {
+        name: 'Dennis',
+        job: 'Bartender',
+      },
+    ],
+  }
+  render() {
+    const { characters } = this.state
+  
+    return (
+      <div className="container">
+        <Table characterData={characters} removeCharacter={this.removeCharacter} />
+      </div>
+    )
+  }
+  
+}
+
+removeCharacter = index => {
+  const { characters } = this.state
+
+  this.setState({
+    characters: characters.filter((character, i) => {
+      return i !== index
+    }),
+  })
+}
+
+export default App
